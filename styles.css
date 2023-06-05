@@ -1,0 +1,132 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 400px;
+    margin: 20px auto;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    overflow: hidden;
+    animation: fade-in 0.5s ease-in-out;
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.header {
+    background-color: #4CAF50;
+    padding: 20px;
+    color: #fff;
+    text-align: center;
+}
+
+.task-input-container {
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.task-input {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    outline: none;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.add-button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: #4CAF50;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.add-button:hover {
+    background-color: #45a049;
+}
+
+.task-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.task {
+    position: relative;
+    padding: 15px;
+    border-bottom: 1px solid #ddd;
+    animation: slide-up 0.3s ease-in;
+}
+
+@keyframes slide-up {
+    from {
+        transform: translateY(50%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.task:last-child {
+    border-bottom: none;
+}
+
+.task-text {
+    font-size: 16px;
+    word-break: break-all;
+}
+
+.actions {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    display: flex;
+    gap: 5px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.task:hover .actions {
+    opacity: 1;
+}
+
+.actions button {
+    padding: 5px;
+    border: none;
+    border-radius: 50%;
+    font-size: 14px;
+    background-color: transparent;
+    color: #999;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.actions button:hover {
+    color: #555;
+}
+
+.done {
+    text-decoration: line-through;
+    color: #999;
+}
